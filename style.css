@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Playfair Display", sans-serif;
+}
+.wrapper{
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background: white;
+    padding: 30px;
+    background-color: pink;
+}
+.header{
+    width: 100%;
+
+}
+button{
+    background: rgb(187, 56, 56);
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: none;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cards{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+.card{
+    width: 200px;
+    height: 300px;
+    font-size: 100px;
+    margin-bottom: 30px;
+    background-color: transparent;
+    perspective: 1000px;
+    overflow: hidden;
+}
+.box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+.clicked .box-inner {
+    transform: rotateY(0deg) !important;
+}
+.win-card .box-inner{
+    transition: opacity 0.5s;
+    transform: rotateY(0deg) !important;
+    opacity: 0.5;
+}
+.box-front {
+    background: rgb(117, 175, 117);
+    color: #111111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.box-front, .box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.box-back {
+    
+    transform: rotateY(180deg);
+}
+.popup-background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    top: 0;
+    opacity: 0.5;
+    z-index: 5;
+    display: none;
+}
+img {
+    object-fit: cover;
+    max-width: 200px;
+    height: 300px;
+}
+.finish-btn{
+    display: none;
+}
+.popup{
+    padding: 30px 0;
+    background: transparent;
+    text-align: center;
+    color: white;
+    width: 20%;
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+h2 {
+    margin-bottom: 10px;
+    color: black;
+}
+.show{
+    display: block;
+}
